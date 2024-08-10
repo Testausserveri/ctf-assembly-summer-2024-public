@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  web:
+    image: php:8.3-apache
+    ports:
+      - "127.0.0.1:3013:80"
+    volumes:
+      - ./src/html:/var/www/html:ro
+      - ./src/flag.txt:/var/www/flag.txt:ro
+      - ./staging:/var/www/staging

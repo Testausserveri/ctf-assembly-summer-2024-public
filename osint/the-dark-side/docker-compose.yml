@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  plain:
+    image: nginx:stable
+    restart: always
+    ports:
+      - "127.0.0.1:3006:80/tcp"
+    networks:
+      - plain
+    volumes:
+      - "./plain-static:/static:ro"
+      - "./plain-nginx.conf:/etc/nginx/nginx.conf:ro"
+
+  alternative:
+    image: nginx:stable
+    restart: always
+    networks:
+      - alternative
+    volumes:
+      - "./alternative-static:/static:ro"
+      - "./alternative-nginx.conf:/etc/nginx/nginx.conf:ro"
+
+  hidden-service:
+    build: ./tor-src
+    restart: always
+    networks:
+      - alternative
+    volumes:
+      - "./tor-conf:/etc/tor:ro"
+      - "./tor-data:/var/lib/tor"
+
+networks:
+  plain:
+  alternative:

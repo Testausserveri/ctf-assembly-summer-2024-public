@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak Flag and Enter</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            min-width: 300px;
+            display: flex;
+            position: relative;
+            margin: 10%;
+            width: calc(100% - 20%);
+            height: 40%;
+            min-height: 200px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: flex-start;
+        }
+
+        img {
+            width: 60%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        #magic {
+            width: 100%;
+            font-size: 24px;
+            text-align: center;
+            word-wrap: break-word;
+            font-family: math;
+        }
+
+        #flag-input {
+            width: 300px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        #enter {
+            width: 50px;
+            height: 30px;
+            padding: 5px;
+        }
+
+        #result {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin-bottom: 0px; margin-top: 5%;">
+        <p id="magic">4 {. 6 1. 5 ᛇ. 7 ᛮ. 15 ᛩ. 10 ᛉ. 1 ᛖ. 17 !. 14 r. 9 s. 8 3. 3 ᛞ. 0 ᛗ. 18 }. 13 0. 11 ᛦ. 2 ᛒ. 12 ᛇ. 16 ᛡ</p>
+        <img src="./background.webp">
+    </div>
+    <div class="container" style="margin-top: 20px;">
+        <input type="text" id="flag-input" placeholder="Flag">
+        <button id="enter">Speak</button>
+        <p id="result"></p>
+    </div>
+    <script src="./magic.js"></script>
+    <script>
+        document.getElementById("enter").onclick = () => magic(document.getElementById("flag-input").value)
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSRY login panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="/media/avatar.png" alt="Testauskoira">
+    </header>
+    <main>
+        <div class="container">
+            <?php if (!empty($_SESSION['error'])): ?>
+                <?php foreach ($_SESSION['error'] as $error): ?>
+                    <p class="error"><?= $error ?></p>
+                <?php endforeach; ?>
+                <?php $_SESSION['error'] = []; ?>
+            <?php endif; ?>
+            
+            <?php if (empty($template)): ?>
+                <p>Page not found</p>
+            <?php else: ?>
+                <?php include __DIR__ . '/'. $template . '.phtml'; ?>
+            <?php endif; ?>
+        </div>
+    </main>
+
+    <!-- <footer>
+        <a href="/sitemap.php">Sitemap</a>
+    </footer> -->
+</body>
+</html>

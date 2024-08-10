@@ -1,0 +1,6 @@
+services:
+  surfers_lodge:
+    build: .
+    ports:
+      - 3008:1337
+    restart: on-failure

@@ -1,0 +1,6 @@
+services:
+  echotool2:
+    build: .
+    ports:
+      - 3004:1337
+    restart: on-failure

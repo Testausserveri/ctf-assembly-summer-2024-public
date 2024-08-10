@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  flagshop:
+    build: ./source
+    restart: always
+    ports:
+      - "127.0.0.1:3007:3000/tcp"
+    environment:
+      # get your own openai api key lmao
+      OPENAI_API_KEY: ""
+      FLAG: TSRY{GPT_S0C14L_3NG1N33R1NG}

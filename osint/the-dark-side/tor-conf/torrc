@@ -1,0 +1,2 @@
+HiddenServiceDir /var/lib/tor/alternative
+HiddenServicePort 80 alternative:80

@@ -1,0 +1,11 @@
+services:
+  barbershop:
+    build: ./source
+    privileged: true
+    ports:
+      - "0.0.0.0:3005:1337/tcp"
+
+  proxy:
+   build: ./proxy
+   network_mode: host
+   restart: always

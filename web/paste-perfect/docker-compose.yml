@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  paste:
+    build: ./source
+    restart: always
+    ports:
+      - "127.0.0.1:3010:3000/tcp"
+    volumes:
+      - ./data:/app/data
+    environment:
+      FLAG: TSRY{N0T_S0_P3RF3CT_4R3_W3}

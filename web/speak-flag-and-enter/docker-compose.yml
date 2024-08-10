@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  chal:
+    image: nginx:stable
+    restart: always
+    ports:
+      - "127.0.0.1:3001:80/tcp"
+    volumes:
+      - "./src:/static:ro"
+      - "./nginx.conf:/etc/nginx/nginx.conf:ro"

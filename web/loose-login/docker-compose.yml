@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  web:
+    image: php:8.3-apache
+    ports:
+      - "127.0.0.1:3014:80"
+    volumes:
+      - ./src:/var/www
